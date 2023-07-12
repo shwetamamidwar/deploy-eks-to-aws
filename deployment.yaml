@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopshint
+  labels:
+    app: devopshint
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devopshint
+  template:
+    metadata:
+      labels:
+        app: devopshint
+    spec:
+      containers:
+        - name: devopshint
+          image: 908198849120.dkr.ecr.ap-south-1.amazonaws.com/devopshint
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+            
